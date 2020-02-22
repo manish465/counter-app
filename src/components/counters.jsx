@@ -11,11 +11,18 @@ class Counters extends Component {
         ]
     };
 
+    handelDelete = () => {
+        console.log("Deleted");
+    };
     render() {
         return (
             <div>
                 {this.state.counters.map(counter => (
-                    <Counter key={counter.id} value={this.value} />
+                    <Counter
+                        key={counter.id}
+                        value={counter.value}
+                        onDelete={this.handelDelete}
+                    />
                 ))}
             </div>
         );
